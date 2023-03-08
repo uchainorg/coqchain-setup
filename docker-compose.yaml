@@ -5,7 +5,7 @@ services:
     command:
       - "--datadir=/datadir/node"
       - "--syncmode=full"
-      - "--networkid=9705"
+      - "--networkid=17390"
       - "--nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b"
       - "--maxpeers=512"
       - "--light.maxpeers=256"
@@ -18,7 +18,7 @@ services:
     volumes:
       - "./data/bootnode:/datadir/node"
     ports:
-      - "30303:30303"
+      - "30300:30303"
     restart: always
     logging:
       driver: "json-file"
@@ -32,12 +32,12 @@ services:
     image: coqchain:latest
     command:
       - "--datadir=/datadir/node"
-      - "--networkid=9705"
+      - "--networkid=17390"
       - "--txlookuplimit=0"
       - "--mine"
       - "--syncmode=full"
       - "--allow-insecure-unlock"
-      - "--unlock=0bfa300c5e3ae73dce81fe95653e80aa88f1aacc"
+      - "--unlock=9cc2dea8a8353c3108d021e2228b77cb11c05b37"
       - "--password=/password.txt"
       - "--config=/config.toml"
       - "--miner.gaslimit=30000000"
@@ -62,12 +62,12 @@ services:
     image: coqchain:latest
     command:
       - "--datadir=/datadir/node"
-      - "--networkid=9705"
+      - "--networkid=17390"
       - "--txlookuplimit=0"
       - "--mine"
       - "--syncmode=full"
       - "--allow-insecure-unlock"
-      - "--unlock=df46be5ec52bb359c84140aed6cad8074960d8c9"
+      - "--unlock=803a106aba7893e9785b9fdaf6cb1a9e7950b76e"
       - "--password=/password.txt"
       - "--config=/config.toml"
       - "--miner.gaslimit=30000000"
@@ -92,12 +92,12 @@ services:
     image: coqchain:latest
     command:
       - "--datadir=/datadir/node"
-      - "--networkid=9705"
+      - "--networkid=17390"
       - "--txlookuplimit=0"
       - "--mine"
       - "--syncmode=full"
       - "--allow-insecure-unlock"
-      - "--unlock=5da5b8cc83285ec3defef17dd335bdfae5898214"
+      - "--unlock=ecf92d03dc07e1e59ab2753f951f041c3af88179"
       - "--password=/password.txt"
       - "--config=/config.toml"
       - "--miner.gaslimit=30000000"
@@ -122,21 +122,20 @@ services:
     image: coqchain:latest
     command:
       - "--datadir=/datadir/node"
-      - "--networkid=9705"
+      - "--networkid=17390"
       - "--txlookuplimit=0"
       - "--http"
       - "--http.addr=0.0.0.0"
-      - "--http.api=eth,net,web3,debug,txpool,personal"
+      - "--http.api=eth,net,web3,txpool,personal"
       - "--http.port=8545"
       - "--http.corsdomain=*"
       - "--http.vhosts=*"
       - "--ws"
       - "--ws.addr=0.0.0.0"
-      - "--ws.api=eth,net,web3,debug,txpool,personal"
+      - "--ws.api=eth,net,web3,txpool,personal"
       - "--ws.port=8546"
       - "--ws.origins=*"
       - "--syncmode=full"
-      - "--gcmode=archive"
       - "--allow-insecure-unlock"
       - "--config=/config.toml"
       - "--miner.gaslimit=30000000"
@@ -149,8 +148,8 @@ services:
       - "./config.toml:/config.toml"
     restart: always
     ports:
-      - "8545:8545"
-      - "8546:8546"
+      - "28545:8545"
+      - "28546:8546"
     logging:
       driver: "json-file"
       options:
@@ -164,8 +163,8 @@ services:
     command:
       - "--genesis=/genesis.json"
       - "--bootnodes=enode://c81dd5f432557819de79c21d59b50f84463a746ada3f900ba63364fa9de062bde2637d35627d1af9514e347e4f8e0495691bc783e1f996c402400840199f4841@bootnode:30303"
-      - "--network=9705"
-      - "--account.json=/root/.faucet/UTC--2022-08-25T08-41-43.342038531Z--5da5b8cc83285ec3defef17dd335bdfae5898214"
+      - "--network=17390"
+      - "--account.json=/root/.faucet/UTC--2022-12-26T07-34-30.232956309Z--9cc2dea8a8353c3108d021e2228b77cb11c05b37"
       - "--account.pass=/password.txt"
       - "--noauth=true"
       - "--faucet.name=COQ"
